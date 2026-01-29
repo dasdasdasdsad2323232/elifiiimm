@@ -69,7 +69,27 @@ class="rounded-lg object-cover w-full h-64 sm:h-80 md:h-full">
 </p>
         </div>
     </div>
+<!-- Arka Plan Müziği -->
+<audio id="bgMusic" loop>
+    <source src="./music.mp3" type="audio/mpeg">
+</audio>
 
+<!-- Müzik Başlat Butonu -->
+<div class="fixed bottom-4 right-4 z-50">
+    <button onclick="playMusic()"
+        class="bg-pink-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-pink-600 transition">
+        🎵 Müziği Aç
+    </button>
+</div>
+
+<script>
+function playMusic() {
+    const music = document.getElementById("bgMusic");
+    music.volume = 0.5; // hafif ses
+    music.play();
+}
+</script>
 </body>
+
 
 
