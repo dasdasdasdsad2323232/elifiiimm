@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html lang="tr">
 <head>
-    <body class="bg-gradient-to-br from-pink-100 to-purple-200 min-h-screen overflow-x-hidden"></body>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Birick Sevgilimeeee...</title>
@@ -14,82 +12,84 @@
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-pink-100 to-purple-200 min-h-screen">
+
+<body class="bg-gradient-to-br from-pink-100 to-purple-200 min-h-screen overflow-x-hidden">
+
+    <!-- Arka Plan Müziği -->
+    <audio id="bgMusic" loop>
+        <source src="./music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Müzik Butonu -->
+    <div class="fixed bottom-4 right-4 z-50">
+        <button onclick="playMusic()"
+            class="bg-pink-400 text-white px-5 py-2 rounded-full shadow-xl romantic-font animate-pulse hover:bg-pink-500 transition">
+            🎵 Müziği Aç
+        </button>
+    </div>
+
     <div class="container mx-auto px-4 py-12">
         <div class="text-center mb-16">
             <h1 class="romantic-font text-4xl sm:text-5xl md:text-6xl text-pink-600 mb-4">
-    ELİFİM
-</h1>
-            <p class="text-2xl text-gray-700"></p>
+                ELİFİM
+            </h1>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div class="bg-white rounded-lg shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
-                <div class="aspect-w-1 aspect-h-1 mb-4">
-                    <img src="ask.jpg" alt="Bizim Fotoğrafımız"
-class="rounded-lg object-cover w-full h-64 sm:h-80 md:h-full">
-                </div>
-                <p class="romantic-font text-2xl text-center text-pink-600">İlk Buluşmamız</p>
+                <img src="./ask.jpg" class="rounded-lg object-cover w-full h-64 sm:h-80">
+                <p class="romantic-font text-2xl text-center text-pink-600 mt-4">İlk Buluşmamız</p>
             </div>
 
             <div class="bg-white rounded-lg shadow-lg p-6">
                 <h2 class="romantic-font text-3xl text-pink-600 mb-4">Sana Olan Sevgim</h2>
-                <p class="text-gray-700 text-base sm:text-lg leading-relaxed mb-4 text-center sm:text-left"></p>
-                    “Hiçbir roman, şarkı veya şiir şarkı sana duyduğum aşkı anlatmaya yetmez. Sana karşı hissettiğim sevgiyi tarif etmeye yetecek bir kelime yeryüzünde henüz keşfedilmedi. Seni öyle çok seviyorum ki ömrümü yalızca sana adamak istiyorum.”
-                </p>
-                <p class="text-gray-700 leading-relaxed">
+                <p class="text-gray-700 text-base sm:text-lg leading-relaxed text-center sm:text-left">
+                    “Hiçbir roman, şarkı veya şiir sana duyduğum aşkı anlatmaya yetmez.
+                    Sana karşı hissettiğim sevgiyi tarif etmeye yetecek bir kelime
+                    yeryüzünde henüz keşfedilmedi. Seni öyle çok seviyorum ki
+                    ömrümü yalnızca sana adamak istiyorum.”
                 </p>
             </div>
         </div>
 
-        <!-- Victor77 -->
-        
         <div class="mt-16">
-            <h2 class="romantic-font text-4xl text-center text-pink-600 mb-8">Hayatımın En Güzel Anları</h2>
+            <h2 class="romantic-font text-4xl text-center text-pink-600 mb-8">
+                Hayatımın En Güzel Anları
+            </h2>
+
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <div class="bg-white rounded-lg shadow-lg p-4 transform hover:scale-105 transition-transform duration-300">
-                    <img src="ask2.jpg" alt="Anı 1" class="rounded-lg w-full mb-4">
-                    <p class="text-center text-gray-700">Seni </p>
+                <div class="bg-white rounded-lg shadow-lg p-4">
+                    <img src="./ask2.jpg" class="rounded-lg w-full mb-4">
+                    <p class="text-center text-gray-700">Seni</p>
                 </div>
-                <div class="bg-white rounded-lg shadow-lg p-4 transform hover:scale-105 transition-transform duration-300">
-                    <img src="nah.jpg" alt="Anı 2" class="rounded-lg w-full mb-4">
+
+                <div class="bg-white rounded-lg shadow-lg p-4">
+                    <img src="./nah.jpg" class="rounded-lg w-full mb-4">
                     <p class="text-center text-gray-700">Çok</p>
                 </div>
-                <div class="bg-white rounded-lg shadow-lg p-4 transform hover:scale-105 transition-transform duration-300">
-                    <img src="ask3.jpg" alt="Anı 3" class="rounded-lg w-full mb-4">
+
+                <div class="bg-white rounded-lg shadow-lg p-4">
+                    <img src="./ask3.jpg" class="rounded-lg w-full mb-4">
                     <p class="text-center text-gray-700">Seviyorum</p>
                 </div>
             </div>
         </div>
 
         <div class="text-center mt-16">
-<div class="text-4xl sm:text-5xl md:text-6xl animate-bounce">❤️</div>
-<p class="romantic-font text-2xl sm:text-3xl text-pink-600 mt-4">
-    Sonsuza Kadar Seninle
-</p>
+            <div class="text-4xl sm:text-5xl md:text-6xl animate-bounce">❤️</div>
+            <p class="romantic-font text-2xl sm:text-3xl text-pink-600 mt-4">
+                Sonsuza Kadar Seninle
+            </p>
         </div>
     </div>
-<!-- Arka Plan Müziği -->
-<audio id="bgMusic" loop>
-    <source src="./music.mp3" type="audio/mpeg">
-</audio>
 
-<!-- Müzik Başlat Butonu -->
-<div class="fixed bottom-4 right-4 z-50">
-    <button onclick="playMusic()"
-        class="bg-pink-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-pink-600 transition">
-        🎵 Müziği Aç
-    </button>
-</div>
+    <script>
+        function playMusic() {
+            const music = document.getElementById("bgMusic");
+            music.volume = 0.25; // hafif romantik ses
+            music.play();
+        }
+    </script>
 
-<script>
-function playMusic() {
-    const music = document.getElementById("bgMusic");
-    music.volume = 0.5; // hafif ses
-    music.play();
-}
-</script>
 </body>
-
-
-
+</html>
