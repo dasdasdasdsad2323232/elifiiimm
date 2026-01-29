@@ -4,92 +4,152 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Birick Sevgilimeeee...</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
         .romantic-font {
             font-family: 'Dancing Script', cursive;
+        }
+
+        /* 💖 Kalp Animasyonu */
+        .heart {
+            position: fixed;
+            bottom: -20px;
+            font-size: 20px;
+            animation: floatUp 6s linear forwards;
+            opacity: 0.8;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-110vh); opacity: 0; }
         }
     </style>
 </head>
 
 <body class="bg-gradient-to-br from-pink-100 to-purple-200 min-h-screen overflow-x-hidden">
 
-    <!-- Arka Plan Müziği -->
-    <audio id="bgMusic" loop>
-        <source src="./music.mp3" type="audio/mpeg">
-    </audio>
+<!-- 🎵 MÜZİK -->
+<audio id="bgMusic" loop>
+    <source src="./music.mp3" type="audio/mpeg">
+</audio>
 
-    <!-- Müzik Butonu -->
-    <div class="fixed bottom-4 right-4 z-50">
-        <button onclick="playMusic()"
-            class="bg-pink-400 text-white px-5 py-2 rounded-full shadow-xl romantic-font animate-pulse hover:bg-pink-500 transition">
-            🎵 Müziği Aç
+<!-- 🎵 MÜZİK BUTONU -->
+<div class="fixed bottom-4 right-4 z-50">
+    <button onclick="playMusic()"
+        class="bg-pink-400 text-white px-5 py-2 rounded-full shadow-xl romantic-font animate-pulse hover:bg-pink-500 transition">
+        🎵 Müziği Aç
+    </button>
+</div>
+
+<!-- 💌 MÜZİK BAŞLAYINCA MESAJ -->
+<div id="loveMessage"
+     class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-40">
+    <div class="bg-white p-8 rounded-2xl shadow-2xl text-center">
+        <p class="romantic-font text-3xl text-pink-600 mb-4">
+            İyi ki varsın Elif 💖
+        </p>
+        <button onclick="closeMessage()"
+            class="bg-pink-400 text-white px-4 py-2 rounded-full">
+            💕
         </button>
     </div>
+</div>
 
-    <div class="container mx-auto px-4 py-12">
-        <div class="text-center mb-16">
-            <h1 class="romantic-font text-4xl sm:text-5xl md:text-6xl text-pink-600 mb-4">
-                ELİFİM
-            </h1>
+<div class="container mx-auto px-4 py-12">
+
+    <div class="text-center mb-16">
+        <h1 class="romantic-font text-4xl sm:text-5xl md:text-6xl text-pink-600 mb-4">
+            ELİFİM
+        </h1>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <img src="./ask.jpg" class="rounded-lg object-cover w-full h-64 sm:h-80">
+            <p class="romantic-font text-2xl text-center text-pink-600 mt-4">
+                İlk Buluşmamız
+            </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div class="bg-white rounded-lg shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
-                <img src="./ask.jpg" class="rounded-lg object-cover w-full h-64 sm:h-80">
-                <p class="romantic-font text-2xl text-center text-pink-600 mt-4">İlk Buluşmamız</p>
-            </div>
-
-            <div class="bg-white rounded-lg shadow-lg p-6">
-                <h2 class="romantic-font text-3xl text-pink-600 mb-4">Sana Olan Sevgim</h2>
-                <p class="text-gray-700 text-base sm:text-lg leading-relaxed text-center sm:text-left">
-                    “Hiçbir roman, şarkı veya şiir sana duyduğum aşkı anlatmaya yetmez.
-                    Sana karşı hissettiğim sevgiyi tarif etmeye yetecek bir kelime
-                    yeryüzünde henüz keşfedilmedi. Seni öyle çok seviyorum ki
-                    ömrümü yalnızca sana adamak istiyorum.”
-                </p>
-            </div>
-        </div>
-
-        <div class="mt-16">
-            <h2 class="romantic-font text-4xl text-center text-pink-600 mb-8">
-                Hayatımın En Güzel Anları
-            </h2>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <div class="bg-white rounded-lg shadow-lg p-4">
-                    <img src="./ask2.jpg" class="rounded-lg w-full mb-4">
-                    <p class="text-center text-gray-700">Seni</p>
-                </div>
-
-                <div class="bg-white rounded-lg shadow-lg p-4">
-                    <img src="./nah.jpg" class="rounded-lg w-full mb-4">
-                    <p class="text-center text-gray-700">Çok</p>
-                </div>
-
-                <div class="bg-white rounded-lg shadow-lg p-4">
-                    <img src="./ask3.jpg" class="rounded-lg w-full mb-4">
-                    <p class="text-center text-gray-700">Seviyorum</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="text-center mt-16">
-            <div class="text-4xl sm:text-5xl md:text-6xl animate-bounce">❤️</div>
-            <p class="romantic-font text-2xl sm:text-3xl text-pink-600 mt-4">
-                Sonsuza Kadar Seninle
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h2 class="romantic-font text-3xl text-pink-600 mb-4">Sana Olan Sevgim</h2>
+            <p class="text-gray-700 text-lg leading-relaxed text-center sm:text-left">
+                Seni anlatmaya kelimeler yetmez…
+                Ömrümü yalnızca sana adamak istiyorum.
             </p>
         </div>
     </div>
 
-    <script>
-        function playMusic() {
-            const music = document.getElementById("bgMusic");
-            music.volume = 0.25; // hafif romantik ses
-            music.play();
-        }
-    </script>
+    <div class="mt-16">
+        <h2 class="romantic-font text-4xl text-center text-pink-600 mb-8">
+            Hayatımın En Güzel Anları
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-lg shadow-lg p-4">
+                <img src="./ask2.jpg" class="rounded-lg w-full mb-4">
+                <p class="text-center">Seni</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-4">
+                <img src="./nah.jpg" class="rounded-lg w-full mb-4">
+                <p class="text-center">Çok</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-4">
+                <img src="./ask3.jpg" class="rounded-lg w-full mb-4">
+                <p class="text-center">Seviyorum</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 💍 SÜRPRİZ FİNAL -->
+    <div class="text-center mt-20">
+        <button onclick="showFinal()"
+            class="bg-pink-500 text-white px-6 py-3 rounded-full romantic-font text-2xl shadow-xl">
+            💍 Sürpriz
+        </button>
+    </div>
+</div>
+
+<!-- 💍 FINAL EKRANI -->
+<div id="finalScreen"
+     class="hidden fixed inset-0 bg-gradient-to-br from-pink-300 to-purple-400 flex items-center justify-center z-50">
+    <p class="romantic-font text-white text-4xl text-center">
+        Benimle hep kalır mısın? 💖
+    </p>
+</div>
+
+<script>
+/* 🎵 Müzik */
+function playMusic() {
+    const music = document.getElementById("bgMusic");
+    music.volume = 0.25;
+    music.play();
+    document.getElementById("loveMessage").classList.remove("hidden");
+}
+
+/* 💌 Mesaj kapat */
+function closeMessage() {
+    document.getElementById("loveMessage").classList.add("hidden");
+}
+
+/* 💍 Final */
+function showFinal() {
+    document.getElementById("finalScreen").classList.remove("hidden");
+}
+
+/* 💖 Kalp yağmuru */
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+}, 700);
+</script>
 
 </body>
 </html>
