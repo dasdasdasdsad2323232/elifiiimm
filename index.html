@@ -1,146 +1,131 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Birick Sevgilimeeee...</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birick Sevgilimeeee...</title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
 
-    <style>
-        .romantic-font {
-            font-family: 'Dancing Script', cursive;
-        }
+<style>
+.romantic-font { font-family: 'Dancing Script', cursive; }
 
-        /* 💖 uçan kalpler */
-        .heart {
-            position: fixed;
-            bottom: -20px;
-            font-size: 24px;
-            animation: floatUp 6s linear forwards;
-            z-index: 10;
-        }
-        @keyframes floatUp {
-            0% { transform: translateY(0); opacity: 1; }
-            100% { transform: translateY(-110vh); opacity: 0; }
-        }
-    </style>
+/* 💖 uçan kalpler */
+.heart {
+  position: fixed;
+  bottom: -20px;
+  font-size: 24px;
+  animation: floatUp 6s linear forwards;
+  z-index: 10;
+}
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-110vh); opacity: 0; }
+}
+</style>
 </head>
 
 <body class="bg-gradient-to-br from-pink-100 to-purple-200 min-h-screen overflow-x-hidden">
 
-<!-- 😂 kahkaha -->
+<!-- 🎵 SESLER -->
+<audio id="bgMusic" src="romantik.mp3" loop></audio>
 <audio id="laughSound" src="kahkaha.mp3"></audio>
+
+<!-- 🎵 MÜZİK BUTONU -->
+<button id="musicBtn"
+ class="fixed bottom-4 right-4 bg-pink-500 text-white px-5 py-3 rounded-full z-50 shadow-xl">
+🎵 Müziği Aç
+</button>
 
 <div class="container mx-auto px-4 py-12">
 
-    <!-- BAŞLIK -->
-    <div class="text-center mb-16">
-        <h1 class="romantic-font text-6xl text-pink-600 mb-4">ELİFİM</h1>
-    </div>
+<!-- BAŞLIK -->
+<div class="text-center mb-16">
+  <h1 class="romantic-font text-6xl text-pink-600">ELİFİM</h1>
+</div>
 
-    <!-- İLK BÖLÜM -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <div class="bg-white rounded-lg shadow-lg p-6">
-            <img src="ask.jpg" alt="Bizim Fotoğrafımız" class="rounded-lg w-full">
-            <p class="romantic-font text-2xl text-center text-pink-600 mt-3">
-                İlk Buluşmamız
-            </p>
-        </div>
+<!-- FOTO + YAZI -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+  <div class="bg-white rounded-lg shadow-lg p-6">
+    <img src="ask.jpg" class="rounded-lg w-full">
+    <p class="romantic-font text-2xl text-center text-pink-600 mt-3">
+      İlk Buluşmamız
+    </p>
+  </div>
 
-        <div class="bg-white rounded-lg shadow-lg p-6">
-            <h2 class="romantic-font text-3xl text-pink-600 mb-4">
-                Sana Olan Sevgim
-            </h2>
-            <p class="text-gray-700 leading-relaxed">
-                Hiçbir roman, şarkı veya şiir sana duyduğum aşkı anlatmaya yetmez.
-                Seni öyle çok seviyorum ki ömrümü yalnızca sana adamak istiyorum. 💖
-            </p>
-        </div>
-    </div>
+  <div class="bg-white rounded-lg shadow-lg p-6">
+    <h2 class="romantic-font text-3xl text-pink-600 mb-4">
+      Sana Olan Sevgim
+    </h2>
+    <p class="text-gray-700 leading-relaxed">
+      Hiçbir roman, şarkı veya şiir sana duyduğum aşkı anlatmaya yetmez.
+      Seni öyle çok seviyorum ki ömrümü yalnızca sana adamak istiyorum. 💖
+    </p>
+  </div>
+</div>
 
-    <!-- ALT GALERİ -->
-    <div class="mt-16">
-        <h2 class="romantic-font text-4xl text-center text-pink-600 mb-8">
-            Hayatımın En Güzel Anları
-        </h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-white rounded-lg shadow-lg p-4">
-                <img src="ask2.jpg" class="rounded-lg w-full mb-4">
-                <p class="text-center text-gray-700">Seni</p>
-            </div>
-
-            <div class="bg-white rounded-lg shadow-lg p-4">
-                <img src="ask1.jpg" class="rounded-lg w-full mb-4">
-                <p class="text-center text-gray-700">Çok</p>
-            </div>
-
-            <div class="bg-white rounded-lg shadow-lg p-4">
-                <img src="ask3.jpg" class="rounded-lg w-full mb-4">
-                <p class="text-center text-gray-700">Seviyorum</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- 🎁 SÜRPRİZ BUTONU (EK) -->
-    <div class="text-center mt-20">
-        <button id="surprizBtn"
-            class="bg-purple-500 text-white px-8 py-4 rounded-full romantic-font text-2xl shadow-xl">
-            Sürprize bas 🎁
-        </button>
-    </div>
-
-    <!-- KALP -->
-    <div class="text-center mt-16">
-        <div class="text-6xl animate-bounce">❤️</div>
-        <p class="romantic-font text-3xl text-pink-600 mt-4">
-            Sonsuza Kadar Seninle
-        </p>
-    </div>
+<!-- 🎁 SÜRPRİZ BUTONU -->
+<div class="text-center mt-20">
+  <button id="surprizBtn"
+   class="bg-purple-500 text-white px-8 py-4 rounded-full romantic-font text-2xl shadow-xl">
+    Sürprize bas 🎁
+  </button>
+</div>
 
 </div>
 
 <!-- 😂 SÜRPRİZ POPUP -->
 <div id="popup"
  class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
-    <div class="bg-white p-4 rounded-2xl relative w-[90%] max-w-sm animate-bounce">
-        <button id="closePopup"
-            class="absolute -top-3 -right-3 bg-red-500 text-white w-8 h-8 rounded-full">
-            ✕
-        </button>
-        <img src="nah.jpg" class="rounded-xl w-full">
-        <p class="text-center mt-3 romantic-font text-xl text-pink-600">
-            😏 sürpriiiz
-        </p>
-    </div>
+  <div class="bg-white p-4 rounded-2xl relative w-[90%] max-w-sm animate-bounce">
+    <button id="closePopup"
+     class="absolute -top-3 -right-3 bg-red-500 text-white w-8 h-8 rounded-full">
+      ✕
+    </button>
+    <img src="nah.jpg" class="rounded-xl w-full">
+    <p class="text-center mt-3 romantic-font text-xl text-pink-600">
+      😏 sürpriiiz
+    </p>
+  </div>
 </div>
 
 <script>
 /* 💖 uçan kalpler */
 setInterval(() => {
-    const heart = document.createElement("div");
-    heart.className = "heart";
-    heart.innerText = "❤️";
-    heart.style.left = Math.random() * 100 + "vw";
-    document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 6000);
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerText = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
 }, 800);
 
-/* 🎁 sürpriz + kahkaha */
+/* 🎵 müzik */
+const bgMusic = document.getElementById("bgMusic");
+document.getElementById("musicBtn").onclick = () => {
+  if (bgMusic.paused) {
+    bgMusic.play();
+    musicBtn.innerText = "⏸️ Müziği Durdur";
+  } else {
+    bgMusic.pause();
+    musicBtn.innerText = "🎵 Müziği Aç";
+  }
+};
+
+/* 🎁 sürpriz + kahkaha (KESİN ÇALIŞIR) */
 const popup = document.getElementById("popup");
 const laugh = document.getElementById("laughSound");
 
 document.getElementById("surprizBtn").onclick = () => {
-    popup.classList.remove("hidden");
-    popup.classList.add("flex");
-    laugh.currentTime = 0;
-    laugh.play();
+  popup.classList.remove("hidden");
+  popup.classList.add("flex");
+  laugh.currentTime = 0;
+  laugh.play();
 };
 
 document.getElementById("closePopup").onclick = () => {
-    popup.classList.add("hidden");
+  popup.classList.add("hidden");
 };
 </script>
 
