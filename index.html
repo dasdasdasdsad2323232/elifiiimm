@@ -15,118 +15,152 @@
 .heart {
   position: fixed;
   bottom: -20px;
+  color: #ff5fa2;
   font-size: 24px;
-  animation: floatUp 6s linear forwards;
-  z-index: 10;
+  animation: floatUp 6s linear infinite;
 }
 @keyframes floatUp {
-  0% { transform: translateY(0); opacity: 1; }
-  100% { transform: translateY(-110vh); opacity: 0; }
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-110vh) scale(1.5); opacity: 0; }
+}
+
+/* 🎵 müzik butonu */
+#musicBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(45deg,#ff4d6d,#ff85a1);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 18px;
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 9999;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* 🎁 sürpriz butonu */
+#surprizBtn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: linear-gradient(45deg,#7b2cbf,#c77dff);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 18px;
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 9999;
 }
 </style>
 </head>
 
 <body class="bg-gradient-to-br from-pink-100 to-purple-200 min-h-screen overflow-x-hidden">
 
-<!-- 🎵 SESLER -->
-<audio id="bgMusic" src="romantik.mp3" loop></audio>
-<audio id="laughSound" src="kahkaha.mp3"></audio>
+<!-- 🎵 MÜZİK -->
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
 
-<!-- 🎵 MÜZİK BUTONU -->
-<button id="musicBtn"
- class="fixed bottom-4 right-4 bg-pink-500 text-white px-5 py-3 rounded-full z-50 shadow-xl">
-🎵 Müziği Aç
-</button>
+<!-- 😂 KAHKAHA -->
+<audio id="laughSound">
+  <source src="kahkaha.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicBtn">🎵 Müziği Aç</button>
+<button id="surprizBtn">🎁 Sürpriz</button>
 
 <div class="container mx-auto px-4 py-12">
 
-<!-- BAŞLIK -->
 <div class="text-center mb-16">
-  <h1 class="romantic-font text-6xl text-pink-600">ELİFİM</h1>
+  <h1 class="romantic-font text-6xl text-pink-600 mb-4">ELİFİM</h1>
 </div>
 
-<!-- FOTO + YAZI -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-  <div class="bg-white rounded-lg shadow-lg p-6">
+  <div class="bg-white rounded-lg shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
     <img src="ask.jpg" class="rounded-lg w-full">
-    <p class="romantic-font text-2xl text-center text-pink-600 mt-3">
-      İlk Buluşmamız
-    </p>
+    <p class="romantic-font text-2xl text-center text-pink-600 mt-3">İlk Buluşmamız</p>
   </div>
 
   <div class="bg-white rounded-lg shadow-lg p-6">
-    <h2 class="romantic-font text-3xl text-pink-600 mb-4">
-      Sana Olan Sevgim
-    </h2>
+    <h2 class="romantic-font text-3xl text-pink-600 mb-4">Sana Olan Sevgim</h2>
     <p class="text-gray-700 leading-relaxed">
       Hiçbir roman, şarkı veya şiir sana duyduğum aşkı anlatmaya yetmez.
-      Seni öyle çok seviyorum ki ömrümü yalnızca sana adamak istiyorum. 💖
+      Seni ömrüm boyunca sevmek istiyorum 💖
     </p>
   </div>
 </div>
 
-<!-- 🎁 SÜRPRİZ BUTONU -->
-<div class="text-center mt-20">
-  <button id="surprizBtn"
-   class="bg-purple-500 text-white px-8 py-4 rounded-full romantic-font text-2xl shadow-xl">
-    Sürprize bas 🎁
-  </button>
+<div class="mt-16">
+  <h2 class="romantic-font text-4xl text-center text-pink-600 mb-8">
+    Hayatımın En Güzel Anları
+  </h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="bg-white rounded-lg shadow-lg p-4">
+      <img src="ask2.jpg" class="rounded-lg w-full mb-4">
+      <p class="text-center">Seni</p>
+    </div>
+    <div class="bg-white rounded-lg shadow-lg p-4">
+      <img src="ask1.jpg" class="rounded-lg w-full mb-4">
+      <p class="text-center">Çok</p>
+    </div>
+    <div class="bg-white rounded-lg shadow-lg p-4">
+      <img src="ask3.jpg" class="rounded-lg w-full mb-4">
+      <p class="text-center">Seviyorum</p>
+    </div>
+  </div>
+</div>
+
+<div class="text-center mt-16">
+  <div class="text-6xl animate-bounce">❤️</div>
+  <p class="romantic-font text-3xl text-pink-600 mt-4">Sonsuza Kadar Seninle</p>
 </div>
 
 </div>
 
-<!-- 😂 SÜRPRİZ POPUP -->
-<div id="popup"
- class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
-  <div class="bg-white p-4 rounded-2xl relative w-[90%] max-w-sm animate-bounce">
-    <button id="closePopup"
-     class="absolute -top-3 -right-3 bg-red-500 text-white w-8 h-8 rounded-full">
-      ✕
-    </button>
+<!-- 🎁 SÜRPRİZ POPUP -->
+<div id="popup" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
+  <div class="bg-white p-4 rounded-2xl">
     <img src="nah.jpg" class="rounded-xl w-full">
-    <p class="text-center mt-3 romantic-font text-xl text-pink-600">
-      😏 sürpriiiz
-    </p>
+    <p class="text-center mt-3 romantic-font text-xl text-pink-600">😏 sürpriiiz</p>
   </div>
 </div>
 
 <script>
-/* 💖 uçan kalpler */
+/* 🎵 müzik */
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+musicBtn.onclick = () => {
+  if (music.paused) {
+    music.play();
+    musicBtn.textContent = "⏸ Müziği Kapat";
+  } else {
+    music.pause();
+    musicBtn.textContent = "🎵 Müziği Aç";
+  }
+};
+
+/* 💖 kalpler */
 setInterval(() => {
   const heart = document.createElement("div");
   heart.className = "heart";
   heart.innerText = "❤️";
-  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.left = Math.random()*100 + "vw";
   document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 6000);
-}, 800);
+  setTimeout(()=>heart.remove(),6000);
+}, 700);
 
-/* 🎵 müzik */
-const bgMusic = document.getElementById("bgMusic");
-document.getElementById("musicBtn").onclick = () => {
-  if (bgMusic.paused) {
-    bgMusic.play();
-    musicBtn.innerText = "⏸️ Müziği Durdur";
-  } else {
-    bgMusic.pause();
-    musicBtn.innerText = "🎵 Müziği Aç";
-  }
-};
-
-/* 🎁 sürpriz + kahkaha (KESİN ÇALIŞIR) */
+/* 🎁 sürpriz */
 const popup = document.getElementById("popup");
 const laugh = document.getElementById("laughSound");
-
 document.getElementById("surprizBtn").onclick = () => {
   popup.classList.remove("hidden");
   popup.classList.add("flex");
-  laugh.currentTime = 0;
   laugh.play();
 };
-
-document.getElementById("closePopup").onclick = () => {
-  popup.classList.add("hidden");
-};
+popup.onclick = () => popup.classList.add("hidden");
 </script>
 
 </body>
